@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../core/Layout';
-import {API, TEST} from '../config';
+import {API} from '../config';
 
 const Signin = () => (
   <Layout title="SignIn Page" description="The Hemp Reserve">
