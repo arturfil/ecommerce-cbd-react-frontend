@@ -34,15 +34,15 @@ const Home = () => {
   }, [])
 
   return (
-    <Layout title='Home Page' description='The Hemp Reserve'>
+    <Layout title='Home Page' description='The Hemp Reserve' className="container-fluid">
       <h2 className='mb-4'>Best Sellers</h2>
-      {productBySell.map((product, i) => (
-        <Card key={i} product={product} />
-      ))}
+      <div className="row">
+        {productBySell.map((product, i) => (<Card key={i} product={product} />))}
+      </div>
       <h2 className='mb-4'>New Arrivals</h2>
-      {productBySell.map((product, i) => (
-        <Card key={i} product={product} />
-      ))}
+      <div className="row">
+        {productBySell.map((product, i) => (<Card key={i} product={product} />))}
+      </div>
     </Layout>
   )
 }
