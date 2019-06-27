@@ -1,10 +1,50 @@
-import React from 'react';
-import Layout from './Layout';
+import React, { useState, useEffect } from 'react'
+import Layout from './Layout'
+import { getProducts } from './apiCore'
+import Card from './Card'
 
-const Home = () => (
-  <Layout title="Home Page" description="The Hemp Reserve">
-    
-  </Layout>
-)
+const Home = () => {
+  const [productBySell, setProductsBySell] = useState([])
+  const [productByArrival, setProductsByArrival] = useState([])
+  const [error, setError] = useState(false)
 
-export default Home;
+  const loadProductsBySell = () => {
+    getProducts('sold').then(data => {
+      if (data.error) {
+        setError(data.error)
+      } else {
+        setProductsBySell(data)
+      }
+    })
+  }
+
+  const loadProductsByArrival = () => {
+    getProducts('createdAt').then(data => {
+      if (data.error) {
+        setError(data.error)
+      } else {
+        setProductsByArrival(data)
+      }
+    })
+  }
+
+  useEffect(() => {
+    loadProductsByArrival()
+    loadProductsBySell()
+  }, [])
+
+  return (
+    <Layout title='Home Page' description='The Hemp Reserve'>
+      <h2 className='mb-4'>Best Sellers</h2>
+      {productBySell.map((product, i) => (
+        <Card key={i} product={product} />
+      ))}
+      <h2 className='mb-4'>New Arrivals</h2>
+      {productBySell.map((product, i) => (
+        <Card key={i} product={product} />
+      ))}
+    </Layout>
+  )
+}
+
+export default Home
