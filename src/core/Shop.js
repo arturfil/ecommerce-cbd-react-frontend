@@ -31,7 +31,7 @@ const Shop = () => {
       if(data.error) {
         setError(data.error)
       } else {
-        setFilteredResults(data.data)
+        setFilteredResults(data)
       }
     })
   }
@@ -60,10 +60,9 @@ const Shop = () => {
 
     for(let key in data) {
       if (data[key]._id === parseInt(value)) {
-        array = data[key].array
+        array = data[key].array;
       }
     }
-
     return array;
   }
 
@@ -86,14 +85,13 @@ const Shop = () => {
         <div className="col-8">
           <h2 className="mb-4">Products</h2>
           <div className="row">
-            
+            {filteredResults.map((product, i) => (
+              <div key={i} className="col-6 mb-3">
+                <Card product={product}/>
+              </div>
+            ))}
           </div>
-          {/* {filteredResults.map((product, i) => (
-            <div key={i} className="col-6 mb-3">
-              <Card product={product}/>
-            </div>
-          ))} */}
-          {JSON.stringify(filteredResults)}
+          {/* {JSON.stringify(filteredResults)} */}
         </div>
       </div>
     </Layout>
