@@ -7,7 +7,7 @@ const Card = ({ product }) => {
   return (
     <div className='col-4 mb-3'>
       <div className='card'>
-        <div className='card-header'>{AddProduct.name}</div>
+        <div className='card-header'>{product.name}</div>
         <div className='card-body'>
           <ShowImage item={product} url="product"/>
           <p>{product.description.substring(0,50)}...</p>
