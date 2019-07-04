@@ -5,6 +5,7 @@
   "dependencies": {
     "dot-env": "0.0.1",
     "dotenv": "^8.0.0",
+    "moment": "^2.24.0",
     "query-string": "^6.8.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
