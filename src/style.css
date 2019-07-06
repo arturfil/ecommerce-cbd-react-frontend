@@ -7,6 +7,16 @@
   border-radius: 0px;
 }
 
+.cart-badge, .cart-badge:hover {
+    border-radius: 50%;
+    margin: 0 3px;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-style: italic;
+    background: rgb(8, 212, 235);
+    color: #010222
+}
+
 .name {
     background: indigo;
     color: #fff;
