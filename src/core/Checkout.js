@@ -45,6 +45,8 @@ const Checkout = ({products}) => {
     }, 0)
   };
 
+  let deliveryAddress = data.address;
+
   const showCheckout = () => {
     return isAuthenticated() ? (
         <div>
@@ -79,7 +81,7 @@ const Checkout = ({products}) => {
           products: products,
           transaction_id: response.transaction.id,
           amount: response.transaction.amount,
-          address: data.address
+          address: deliveryAddress
         }
         createOrder(userId, token, createOrderData)
 
