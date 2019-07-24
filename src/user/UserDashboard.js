@@ -56,10 +56,11 @@ const Dashboard = () => {
 
   const purchaseHistory = (history) => {
     return (
-      <div className="card mb-5">
-        <h3 className="card-header">Purchase history</h3>
-        <ul className="list-group">
-          <li className="list-group-item">
+      <div >
+      {/* <div className="card mb-5"> */}
+        <h3 className="">Purchase history</h3>
+        {/* <ul className="">
+          <li className="list-group-item"> */}
             {history.map((h,i) => {
               return (
                 <div className="card mb-3">
@@ -82,8 +83,8 @@ const Dashboard = () => {
                 </div>
               )
             })}
-          </li>
-        </ul>
+          {/* </li>
+        </ul> */}
       </div>
     )
   }
