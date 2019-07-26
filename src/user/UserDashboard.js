@@ -63,12 +63,12 @@ const Dashboard = () => {
           <li className="list-group-item"> */}
             {history.map((h,i) => {
               return (
-                <div className="card mb-3">
+                <div key={i} className="card mb-3">
                   
                   <h6 className="card-header" style={{ backgroundColor: "lightgrey" }}>Order# {h._id}</h6>
                     {h.products.map((p, i) => {
                       return (
-                        <div className="m-3">
+                        <div key={i} className="m-3">
                           {
                             <div key={i} style={{ color: "grey" }}>
                               <h6>Product Name: {p.name}</h6>
