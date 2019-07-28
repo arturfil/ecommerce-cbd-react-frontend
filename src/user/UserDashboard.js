@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   useEffect(() => {  
     init(_id,token)
-  })
+  },[])
 
   const userLinks = () => {
     return (
