@@ -5,11 +5,12 @@ import { Link,Redirect } from 'react-router-dom'
 import { getProduct, getCategories, updateProduct } from './apiAdmin'
 
 const UpdateProduct = ({match}) => {
+  const [categories, setCategories] = useState([]);
   const [values, setValues] = useState({
     name: '',
     description: '',
     price: '',
-    categories: [],
+    //categories: [],
     category: '',
     shipping: '',
     quantity: '',
@@ -25,7 +26,7 @@ const UpdateProduct = ({match}) => {
     name,
     description,
     price,
-    categories,
+    //categories,
     category,
     shipping,
     quantity,
@@ -51,11 +52,11 @@ const UpdateProduct = ({match}) => {
           category: data.category._id,  
           shipping: data.shipping,
           quantity: data.quantity,
-          formData: new FormData
+          formData: new FormData()
         })
+        console.log("product",data);
         // load categories
         initCategories()
-        console.log("product",data)
       }
     })
   }
@@ -66,7 +67,8 @@ const UpdateProduct = ({match}) => {
       if (data.error) {
         setValues({ ...values, error: data.error })
       } else {
-        setValues({categories: data, formData: new FormData() })
+        //setValues({categories: data, formData: new FormData() })
+        setCategories(data);
       }
     })
   }
@@ -77,7 +79,7 @@ const UpdateProduct = ({match}) => {
   }, [])
 
   const handleChange = name => event => {
-    const value = name === 'photo' ? event.target.files[0] : event.target.value
+    const value = name === 'photo' ? event.target.files[0] : event.target.value;
     formData.set(name, value)
     setValues({ ...values, [name]: value })
   }
@@ -98,6 +100,8 @@ const UpdateProduct = ({match}) => {
           price: '',
           quantity: '',
           loading: false,
+          error: false,
+          redirectToProfile: true,
           createdProduct: data.name
         })
       }
@@ -213,14 +217,15 @@ const UpdateProduct = ({match}) => {
   const redirectUser = () => {
     if(redirectToProfile) {
       if(!error) {
-        return <Redirect to="/"/>
+        setInterval(3000);
+        return <Redirect to="/admin/dashboard"/>
       }
     }
   }
 
   return (
     <Layout
-      title='Add a new Product'
+      title='Update Product'
       description={`Hello ${user.name}, add a new product`}
     >
       <div className='row'>
