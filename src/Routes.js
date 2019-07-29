@@ -14,6 +14,8 @@ import AddProduct from './admin/AddProduct';
 import Product from './core/Product';
 import Orders from './admin/Orders'
 import Cart from './core/Cart';
+import ManageProducts from './admin/ManageProduct';
+import UpdateProduct from './admin/UpdateProduct';
 
 const Rotues = () => {
   return (
@@ -29,6 +31,8 @@ const Rotues = () => {
           <PrivateRoute path="/profile/:userId" exact component={Profile} />
           <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
           <AdminRoute path="/admin/orders" exact component={Orders} />
+          <AdminRoute path="/admin/products" exact component={ManageProducts} />
+          <AdminRoute path="/admin/product/update/:productId" exact component={UpdateProduct} />
           <AdminRoute path="/create/category" exact component={AddCategory} />
           <AdminRoute path="/create/product" exact component={AddProduct} />
         </Switch>
