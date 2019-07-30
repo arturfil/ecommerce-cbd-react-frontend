@@ -1,7 +1,7 @@
 import {API} from '../config';
 
 export const signup = user => {
-  return fetch(`${API}/api/users/signup`, {
+  return fetch(`${API}/users/signup`, {
     method: "POST",
     headers: {
       Accept: 'application/json',
@@ -18,7 +18,7 @@ export const signup = user => {
 };
 
 export const signin = user => {
-  return fetch(`${API}/api/users/signin`, {
+  return fetch(`${API}/users/signin`, {
     method: "POST",
     headers: {
       Accept: 'application/json',
@@ -45,7 +45,7 @@ export const signout = (next) => {
   if (typeof window !== 'undefined') {
     localStorage.removeItem('jwt');
     next();
-    return fetch(`${API}/api/users/signout`, {
+    return fetch(`${API}/users/signout`, {
       method: 'GET',
     })
       .then(response => {
