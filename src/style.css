@@ -7,13 +7,17 @@
   border-radius: 0px;
 }
 
+.bg {
+    background-color: rgb(45, 213, 92);
+}
+
 .cart-badge, .cart-badge:hover {
     border-radius: 50%;
     margin: 0 3px;
     padding: 2px 6px;
     font-size: 12px;
     font-style: italic;
-    background: rgb(8, 212, 235);
+    background: rgb(65, 244, 187);
     color: #010222
 }
 
@@ -25,6 +29,9 @@
 
 .btn-card {
     border-radius: 25px;
+    border-width: 1.5px;
+    width: 150px;
+    height: 40px;
 }
 
 .black-10 {
@@ -62,7 +69,7 @@
     max-width: 200px !important;
 }
 
-.jumbotron {
+/* .jumbotron {
     width: 30wh;
     height: 30vh;
     color: #fff;
@@ -71,15 +78,27 @@
     -webkit-animation: Gradient 15s ease infinite;
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
+} */
+
+.jumbotron {
+    /* background: url('./img/weed.jpg'); */
+    color: #fff;
+    background-size: 100% 100%;
+    background-image: url('./img/hemp_cover.jpg');
+    filter: brightness(80%);
 }
 
 .jumbotron h2 {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .jumbotron p {
-  text-align: center;
+    text-align: center;
+}
+
+.related {
+    display: inline;
 }
  
 @-webkit-keyframes Gradient {
@@ -115,5 +134,47 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1800px) {
+    .btn-card {
+        margin: 0 auto;
+        width: 120px;
+        height: 20px;
+        padding-bottom: 19px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1499px) {
+    .btn-card {
+        margin: 0 auto;
+        width: 90px;
+        height: 18px;
+        padding-bottom: 19px;
+        font-size: 10px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+    .btn-card {
+        width: 120px;
+        height: 19px;
+        padding-bottom: 19px;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .lead {
+      display: none;
+  }
+
+  .btn-card {
+        width: 120px;
+        height: 20px;
+        padding-bottom: 19px;
+        font-size: 10px;
     }
 }

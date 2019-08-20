@@ -44,7 +44,7 @@ const Card = ({
       dislayAddToCartButton && (
         <button
           onClick={addToCart}
-          className="btn btn-card btn-outline-warning mt-2 mb-2"
+          className="btn btn-card btn-outline-warning mt-2 mb-2 center"
         >
           Add to Cart
         </button>
@@ -100,18 +100,19 @@ const Card = ({
 
   return (
     <div className="card">
-      <div className="card-header name">{product.name}</div>
+      {/* <div className="card-header name">{product.name}</div> */}
       <div className="card-body">
         {shouldRedirect(redirect)}
         <ShowImage item={product} url="product" />
+        <h4>{product.name}</h4>
         <p className="lead mt-2">{product.description.substring(0, 50)}...</p>
         <p className="black-10">${product.price}</p>
-        <p className="black-9">
+        {/* <p className="black-9">
           Category: {product.category && product.category.name}
-        </p>
-        <p className="black-8">
+        </p> */}
+        {/* <p className="black-8">
           Added on {moment(product.createdAt).fromNow()}
-        </p>
+        </p> */}
         {showStock(product.quantity)}
         <br />
         {showViewButton(showViewProductButton)}

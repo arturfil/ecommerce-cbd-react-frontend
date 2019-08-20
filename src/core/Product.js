@@ -49,14 +49,17 @@ const Product = (props) => {
               <Card className="center" product={product} showViewProductButton={false}/>
             } 
           </div>
-          <div className="col-4">
-            <h4>Related Products</h4>
-            {relatedProduct.map((p, i) => (
-              <div className="mb-3">
-                <Card key={i} product={p} />
-              </div>
-            ))}
-          </div>
+        </div>
+      </div>
+      <div className="container">
+        <h4>Related Products</h4>
+        <div className="row">
+          <br/>
+          {relatedProduct.map((p, i) => (
+            <div className="mb-3 col-6 col-sm-4 col-md-3 col-lg-2" key={i}>
+              <Card product={p} />
+            </div>
+          ))}
         </div>
       </div>
     </Layout>

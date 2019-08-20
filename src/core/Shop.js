@@ -98,7 +98,7 @@ const Shop = () => {
       description="The Hemp Reserve"
       className="container-fluid">
       <div className="row">
-        <div className="col-4">
+        <div className="col-12 col-sm-6 col-md-4">
           <h4>Filter by categories</h4>
           <ul>
             <Checkbox categories={categories} handleFilters={filters => handleFilters(filters, 'category')}/>
@@ -108,11 +108,11 @@ const Shop = () => {
             <RadioBox prices={prices} handleFilters={filters => handleFilters(filters, 'price')} />
           </div>
         </div>
-        <div className="col-8">
+        <div className="col-12 col-sm-12 col-md-8">
           <h2 className="mb-4">Products</h2>
           <div className="row">
             {filteredResults.map((product, i) => (
-              <div key={i} className="col-4 mb-3">
+              <div key={i} className="col-6 col-sm-4 col-md-4 col-lg-3 mb-3">
                 <Card product={product} />
               </div>
             ))}
